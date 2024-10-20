@@ -28,21 +28,17 @@ class MyArray{
         return firstElem
     }
 
-    remove(idx) {
-        const item = this.data[idx];
+    remove(idx){
+        const dataToRemove = this.data[idx]
 
-        // Shift elements left starting from idx to reindex
-        for (let i = idx; i < this.length - 1; i++) {
-            this.data[i] = this.data[i + 1];
+        for (let i = idx; i < this.length; i++) {
+            this.data[i] = this.data[i + 1]
         }
 
-        // Delete the last element since it's now duplicated
-        delete this.data[this.length - 1];
+        delete this.data[this.length -1 ]
+        this.length--
 
-        // Reduce the length by 1
-        this.length--;
-
-        return item;
+        return dataToRemove
     }
 }
 
