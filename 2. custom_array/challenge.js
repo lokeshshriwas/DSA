@@ -64,26 +64,20 @@ function fizBuz(num){
 // fizBuz(15)
 
 
-// we have an array of numbers which is indicating stock prices and we need to pruchase it once at the lowest price and then sell it once in the profit whole buy and sell must be taken place just once
+// ****************** Max profit ************************** //
 
-function buySellStocks(arr){
+function maxProfit(arr){
     let minPrice = arr[0];
-    let maxProfit = 0;
-    
+    let maximumProfit = 0;
+
     for (let i = 1; i < arr.length; i++) {
-        const currentPrice = arr[i]
-        minPrice = Math.min(minPrice, currentPrice)
-
-        const potentialProfit = currentPrice - minPrice
-
-        maxProfit = Math.max(maxProfit, potentialProfit)
-        // console.log(maxProfit)
-    }   
-    return maxProfit
+        minPrice = Math.min(minPrice, arr[i]);
+        maximumProfit = Math.max(arr[i] - minPrice, maximumProfit)
+    }
+    return maximumProfit
 }
 
-console.log(buySellStocks([7,1,2,3,5,6]))
-
+console.log(maxProfit([7,1,2,4,6,20]))
 
 
 
