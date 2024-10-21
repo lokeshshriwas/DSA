@@ -3,7 +3,7 @@
 function reverse (item) {
     return item.split("").reverse().join("")
 }
-console.log(reverse("huxn webdev"))
+// console.log(reverse("huxn webdev"))
 
 
 // ******************* palindrom *********************** //
@@ -17,7 +17,7 @@ function palindrom (item) {
     }
 }
 
-console.log(palindrom("dada"))
+// console.log(palindrom("dada"))
 
 
 // ******************** Integer Reversal ************************ //
@@ -27,7 +27,7 @@ function reverseInt(num){
     return Number(str.split("").reverse().join(""))
 }
 
-console.log(reverseInt(1234))
+// console.log(reverseInt(1234))
 
 
 // ****************** Capitalize words ************************ //
@@ -42,7 +42,7 @@ function capital(name) {
     return step2.toString().replaceAll(",", "")
 }
 
-console.log(capital("LokesH"))
+// console.log(capital("LokesH"))
 
 
 // ***************** Fiz buzz *************************** //
@@ -77,7 +77,24 @@ function maxProfit(arr){
     return maximumProfit
 }
 
-console.log(maxProfit([7,1,2,4,6,20]))
+// console.log(maxProfit([7,1,2,4,6,20]))
+
+
+// ********************** Split the array in diff. parts ******************* //
+
+function sliceIntoChunks(arr, n){
+    const chunked = []
+    let index = 0
+    while (index < arr.length) {
+        chunked.push(arr.slice(index, index + n))
+        index += n
+    }
+    return chunked
+}
+
+console.log(sliceIntoChunks([1,2,3,4,5,6,7,8], 2))
+
+
 
 
 
