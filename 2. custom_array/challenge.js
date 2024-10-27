@@ -92,9 +92,23 @@ function sliceIntoChunks(arr, n){
     return chunked
 }
 
-console.log(sliceIntoChunks([1,2,3,4,5,6,7,8], 2))
+// console.log(sliceIntoChunks([1,2,3,4,5,6,7,8], 2))
 
 
+// ******************** Two sum ********************* //
+
+function twoSum (arr, target){
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i+1; j < arr.length; j++) {
+            sum = arr[i] + arr[j] 
+            if(sum === target){
+                return [i , j]
+            }
+        }  
+    }
+}
+
+console.log(twoSum([1,2,3,4,5,6], 7))
 
 
 
