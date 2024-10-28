@@ -50,6 +50,39 @@ class linkedList {
         this.length--
     }
 
+    getFirstItem (){
+        return this.head   
+    }
+
+    getLastItem (){
+        return this.tail   
+    }
+
+    getByIndex (idx){
+        if(idx > this.length) return "Invalid Index"
+        let prev= this.head
+        for (let i = 0; i < idx ; i++) {
+            prev = prev.next
+        }
+        return prev
+    }
+
+    setByIndex (idx, itemToSet){
+        if(idx > this.length) return "Invalid Index"
+        let setItem = this.getByIndex(idx)
+        setItem.head = itemToSet
+    }
+
+    insertByIndex (idx, itemToSet){
+        if(idx > this.length) return "Invalid Index"
+        let insertIdx = this.getByIndex(idx - 1)
+        let item = new Node(itemToSet)
+        item.next = insertIdx.next
+        insertIdx.next = item
+        this.length++
+        return item
+    }
+
 
 }
 
@@ -58,7 +91,14 @@ myLinkedList.addLast(2)
 myLinkedList.addLast(3)
 myLinkedList.addLast(4)
 myLinkedList.addLast(5)
+// console.log(myLinkedList.getFirstItem())
+// console.log(myLinkedList.getLastItem())
 
-myLinkedList.removeLast()
+// myLinkedList.removeLast()
+// console.log(myLinkedList.insertByIndex(1, 10))
+// console.log(myLinkedList)
 // myLinkedList.addFirst(0)
-console.log(myLinkedList);
+// console.log(myLinkedList);
+
+console.log(myLinkedList.findSize())
+// console.log(myLinkedList)
