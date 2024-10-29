@@ -83,7 +83,15 @@ class linkedList {
         return item
     }
 
-
+    countLength (){
+        let count = 0
+        let prev = this.head    
+        while(prev.next !== null){
+            prev = prev.next
+            count++
+        }        
+        return count
+        }
 }
 
 const myLinkedList = new linkedList(1);
@@ -100,5 +108,8 @@ myLinkedList.addLast(5)
 // myLinkedList.addFirst(0)
 // console.log(myLinkedList);
 
-console.log(myLinkedList.findSize())
+// console.log(myLinkedList.findSize())
+
+console.log(myLinkedList.countLength())
+
 // console.log(myLinkedList)
